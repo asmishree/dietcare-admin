@@ -28,7 +28,7 @@ function BlogList() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${API}api/v1/blog/getall`
+          `${API}/blog/getall`
         );
 
         setBlogData(response.data);
@@ -43,10 +43,10 @@ function BlogList() {
   const handleDelete = async (id: string) => {
     try {
       // Send a DELETE request to the server with the specific blog ID
-      await axios.delete(`${API}/api/v1/blog/delete/${id}`);
+      await axios.delete(`${API}/blog/delete/${id}`);
 
       // After successful deletion, fetch the updated data
-      const response = await axios.get(`${API}/api/v1/blog/getall`);
+      const response = await axios.get(`${API}/blog/getall`);
       setBlogData(response.data);
     } catch (error) {
       console.error("Error deleting blog:", error);
