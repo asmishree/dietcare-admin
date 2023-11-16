@@ -9,8 +9,8 @@ class CloudinaryUploadWidget extends Component {
   }
 
   componentDidMount() {
-    const cloudName = "hzxyensd5";
-    const uploadPreset = "aoh4fpwm";
+    const cloudName = "dyun4cr6u";
+    const uploadPreset = "fzpei2zj";
 
     const myWidget = window.cloudinary.createUploadWidget(
       {
