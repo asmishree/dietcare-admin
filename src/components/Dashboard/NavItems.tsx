@@ -36,11 +36,11 @@ const menuItems: MenuItem[] = [
   // { icon: <Person3Icon />, text: 'Teachers', link: '/teachers' },
 ];
 
-const savedReports: SavedReport[] = [
-  { icon: <AssignmentIcon />, text: 'Current month', link: '/current-month' },
-  { icon: <AssignmentIcon />, text: 'Last quarter', link: '/last-quarter' },
-  { icon: <AssignmentIcon />, text: 'Year-end sale', link: '/year-end-sale' },
-];
+// const savedReports: SavedReport[] = [
+//   { icon: <AssignmentIcon />, text: 'Current month', link: '/current-month' },
+//   { icon: <AssignmentIcon />, text: 'Last quarter', link: '/last-quarter' },
+//   { icon: <AssignmentIcon />, text: 'Year-end sale', link: '/year-end-sale' },
+// ];
 
 function NavItems() {
 
@@ -71,9 +71,9 @@ function NavItems() {
             <ListItemText primary={item.text} />
           </ListItemButton>
         ))}
-        <Divider sx={{ my: 1 }} />
-        <ListSubheader inset>Saved reports</ListSubheader>
-        {savedReports.map((item, index) => (
+        {/* <Divider sx={{ my: 1 }} />
+        <ListSubheader inset>Saved reports</ListSubheader> */}
+        {/* {savedReports.map((item, index) => (
           <ListItemButton
             key={index}
             component={NavLink}
@@ -83,7 +83,7 @@ function NavItems() {
             <ListItemIcon>{item.icon}</ListItemIcon>
             <ListItemText primary={item.text} />
           </ListItemButton>
-        ))}
+        ))} */}
       </List>
     </Box>
   );
