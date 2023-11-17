@@ -7,9 +7,11 @@ import { Home } from './pages/home';
 import { Login } from './pages/auth';
 import { Toaster } from "react-hot-toast";
 import BlogList from './pages/blog/BlogList';
-import StudentsList from './pages/students/StudentsList';
 import CreateBlog from './pages/blog/CreateBlog';
 import EditBlog from './pages/blog/EditBlog';
+import DietList from './pages/diet/DietList';
+import CreateDiet from './pages/diet/CreateDiet';
+import EditDiet from './pages/diet/EditDiet';
 
 function App() {
   const [theme, colorMode]: any = useMode();
@@ -41,7 +43,12 @@ function App() {
                 <Route path="/blog" element={<BlogList />} />
                 <Route path="/blog/create" element={<CreateBlog />} />
                 <Route path="/blog/edit/:id" element={<EditBlog />} />
-                <Route path="/students" element={<StudentsList />} />
+
+
+                <Route path="/diet" element={<DietList />} />
+                <Route path="/diet/create" element={<CreateDiet />} />
+                <Route path="/diet/edit/:id" element={<EditDiet />} />
+      
                 <Route path="*" element={<div>NotFound</div>} />
               </Routes>
             </Dashboard> 

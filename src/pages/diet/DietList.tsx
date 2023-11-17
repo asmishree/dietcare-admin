@@ -17,18 +17,18 @@ import EditIcon from "@mui/icons-material/Edit";
 import axios from "axios";
 import API from "../../API";
 
-function BlogList() {
+function DietList() {
   const [currentPage, setCurrentPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [keyword, setKeyword] = useState("");
   const [blogData, setBlogData] = useState([]);
-  const blogs: any = blogData;
+  const diets: any = blogData;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${API}/blog/getall`
+          `${API}/diet/getall`
         );
 
         setBlogData(response.data);
@@ -39,19 +39,6 @@ function BlogList() {
 
     fetchData();
   }, []);
-
-  const handleDelete = async (id: string) => {
-    try {
-      // Send a DELETE request to the server with the specific blog ID
-      await axios.delete(`${API}/blog/delete/${id}`);
-
-      // After successful deletion, fetch the updated data
-      const response = await axios.get(`${API}/blog/getall`);
-      setBlogData(response.data);
-    } catch (error) {
-      console.error("Error deleting blog:", error);
-    }
-  };
 
   const handleSearch = (event: any) => {
     setKeyword(event.target.value);
@@ -77,15 +64,16 @@ function BlogList() {
         <Table stickyHeader>
           <TableHead>
             <TableRow>
-              <TableCell>Img</TableCell>
-              <TableCell>Title</TableCell>
+            <TableCell>Title</TableCell>
+              <TableCell>Dietpref</TableCell>
+              <TableCell>Activity</TableCell>
               <TableCell>Date</TableCell>
               <TableCell>Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {blogs && blogs.length > 0 ? (
-              blogs.map((item: any, index: any) => (
+            {diets && diets.length > 0 ? (
+              diets.map((item: any, index: any) => (
                 <Row key={index} item={item} />
               ))
             ) : (
@@ -113,16 +101,17 @@ function BlogList() {
   );
 }
 
-export default BlogList;
+export default DietList;
 
 const Row = React.memo(({ item }: any) => {
   return (
     <TableRow>
-      <TableCell size="small"><img src={item?.img} alt={item?._id} style={{height:"50px"}}/></TableCell>
-      <TableCell size="small">{item?.title}</TableCell>
+          <TableCell size="small">{item?.title}</TableCell>
+      <TableCell size="small">{item?.dietpref}</TableCell>
+      <TableCell size="small">{item?.activity}</TableCell>
       <TableCell size="small">{item?.createdAt}</TableCell>
       <TableCell size="small">
-        <Link to={`/blog/edit/${item?._id}`}>
+        <Link to={`/diet/edit/${item?._id}`}>
           <Tooltip title="Edit">
             <IconButton>
               <EditIcon />

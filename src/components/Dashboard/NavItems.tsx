@@ -32,7 +32,7 @@ const menuItems: MenuItem[] = [
   { icon: <SchoolIcon />, text: 'Blogs', link: '/blog' },
   { icon: <AssignmentIcon />, text: 'Request', link: '/request' },
   // { icon: <PeopleIcon />, text: 'Students', link: '/students' },
-  // { icon: <BarChartIcon />, text: 'Publishers ', link: '/publishers ' },
+  { icon: <BarChartIcon />, text: 'Diet Plan ', link: '/diet' },
   // { icon: <Person3Icon />, text: 'Teachers', link: '/teachers' },
 ];
 
