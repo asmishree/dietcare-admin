@@ -1,3 +1,3 @@
-const API = "http://localhost:5000/api/v1"
+const API = "https://tame-tan-fly-wrap.cyclic.cloud/api/v1"
 
 export default API 

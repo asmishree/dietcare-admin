@@ -15,6 +15,7 @@ import {
 import { Link } from "react-router-dom";
 import EditIcon from "@mui/icons-material/Edit";
 import axios from "axios";
+import API from "../../API";
 
 function BlogList() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -27,7 +28,7 @@ function BlogList() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/v1/blog/getall"
+          `${API}/blog/getall`
         );
 
         setBlogData(response.data);
@@ -42,10 +43,10 @@ function BlogList() {
   const handleDelete = async (id: string) => {
     try {
       // Send a DELETE request to the server with the specific blog ID
-      await axios.delete(`http://localhost:5000/api/v1/blog/delete/${id}`);
+      await axios.delete(`${API}/blog/delete/${id}`);
 
       // After successful deletion, fetch the updated data
-      const response = await axios.get("http://localhost:5000/api/v1/blog/getall");
+      const response = await axios.get(`${API}/blog/getall`);
       setBlogData(response.data);
     } catch (error) {
       console.error("Error deleting blog:", error);
