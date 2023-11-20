@@ -12,6 +12,7 @@ import EditBlog from './pages/blog/EditBlog';
 import DietList from './pages/diet/DietList';
 import CreateDiet from './pages/diet/CreateDiet';
 import EditDiet from './pages/diet/EditDiet';
+import ContactList from './pages/contact/ContactList';
 
 function App() {
   const [theme, colorMode]: any = useMode();
@@ -48,7 +49,8 @@ function App() {
                 <Route path="/diet" element={<DietList />} />
                 <Route path="/diet/create" element={<CreateDiet />} />
                 <Route path="/diet/edit/:id" element={<EditDiet />} />
-      
+                
+                <Route path="/contact" element={<ContactList/>} />
                 <Route path="*" element={<div>NotFound</div>} />
               </Routes>
             </Dashboard> 
