@@ -30,7 +30,7 @@ interface SavedReport {
 const menuItems: MenuItem[] = [
   { icon: <DashboardIcon />, text: 'Dashboard', link: '/' },
   { icon: <SchoolIcon />, text: 'Blogs', link: '/blog' },
-  { icon: <AssignmentIcon />, text: 'Request', link: '/request' },
+ // { icon: <AssignmentIcon />, text: 'Request', link: '/request' },
    { icon: <PeopleIcon />, text: 'Contact', link: '/contact' },
   { icon: <BarChartIcon />, text: 'Diet Plan ', link: '/diet' },
   // { icon: <Person3Icon />, text: 'Teachers', link: '/teachers' },
